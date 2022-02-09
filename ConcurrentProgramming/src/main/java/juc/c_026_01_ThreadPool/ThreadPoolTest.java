@@ -1,6 +1,7 @@
 package juc.c_026_01_ThreadPool;
 
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -22,7 +23,7 @@ public class ThreadPoolTest implements Runnable {
 
     public static void main(String[] args) {
         LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<>(5);
-        //RejectedExecutionHandler handler = new ThreadPoolExecutor.CallerRunsPolicy();
+        RejectedExecutionHandler handler = new ThreadPoolExecutor.CallerRunsPolicy();
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 10, 0, TimeUnit.SECONDS, queue);
         for (int i = 0; i < 16; i++) {
             //threadPoolExecutor.execute(new ThreadPoolTest());
