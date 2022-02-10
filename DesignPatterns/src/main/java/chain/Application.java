@@ -1,4 +1,4 @@
-package designpatterns;
+package chain;
 
 /**
  * Application
