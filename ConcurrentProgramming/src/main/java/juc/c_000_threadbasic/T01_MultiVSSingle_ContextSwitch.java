@@ -6,9 +6,13 @@ import java.util.concurrent.CountDownLatch;
 
 import static java.lang.System.*;
 
+/**
+ * 随机生成1亿个数，在使用单线程和多线程情况下进行求和，性能对比
+ * @author yzw
+ */
 public class T01_MultiVSSingle_ContextSwitch {
 
-    private static final double[] NUMS = new double[10_0000_0000];
+    private static final double[] NUMS = new double[1_0000_0000];
     private static final Random RANDOM = new Random();
     private static final DecimalFormat DF = new DecimalFormat("0.00");
 
@@ -52,7 +56,8 @@ public class T01_MultiVSSingle_ContextSwitch {
         t2.start();
         t1.join();
         t2.join();
-
+        out.println("result1="+DF.format(result1));
+        out.println("result2="+DF.format(result2));
         result = result1 + result2;
 
         long end = currentTimeMillis();
@@ -64,7 +69,7 @@ public class T01_MultiVSSingle_ContextSwitch {
 
     private static void m3() throws Exception {
 
-        final int threadCount = 32;
+        final int threadCount = 10;
         Thread[] threads = new Thread[threadCount];
         double[] results = new double[threadCount];
         final int segmentCount = NUMS.length / threadCount;
@@ -97,12 +102,12 @@ public class T01_MultiVSSingle_ContextSwitch {
 
         long end = currentTimeMillis();
 
-        out.println("m3: " + (end - start) + " result = " + DF.format(result));
+        out.println("m3: " + (end - start) + " result = " + DF.format(resultM3));
     }
 
     public static void main(String[] args) throws Exception {
-        m1();
+        //m1();
         m2();
-        m3();
+        //m3();
     }
 }

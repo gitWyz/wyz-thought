@@ -8,14 +8,9 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * title:${file_name}
  * 关于线程状态的实验
- *
- * @author 马士兵 http://www.wyz.com
- * @version 2.0
- * @date ${date}
+ * @author yzw
  */
-
 public class T04_ThreadState {
 
     public static void main(String[] args) throws Exception {

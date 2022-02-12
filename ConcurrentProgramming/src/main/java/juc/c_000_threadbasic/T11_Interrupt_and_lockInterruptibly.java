@@ -5,7 +5,8 @@ import util.SleepHelperUtil;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * interrupt与lockInterruptibly()
+ * interrupt与lock#interruptibly()
+ * @author yzw
  */
 public class T11_Interrupt_and_lockInterruptibly {
 

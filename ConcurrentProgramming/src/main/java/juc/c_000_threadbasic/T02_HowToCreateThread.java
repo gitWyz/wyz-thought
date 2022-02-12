@@ -2,6 +2,10 @@ package juc.c_000_threadbasic;
 
 import java.util.concurrent.*;
 
+/**
+ * 创建线程和启动线程的几种方式
+ * @author yzw
+ */
 public class T02_HowToCreateThread {
     static class MyThread extends Thread {
         @Override
@@ -37,7 +41,7 @@ public class T02_HowToCreateThread {
         Thread t = new Thread(task);
         t.start();
         System.out.println(task.get());
-
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 4, 60, TimeUnit.SECONDS, new LinkedBlockingQueue());
         ExecutorService service = Executors.newCachedThreadPool();
         service.execute(() -> {
             System.out.println("Hello ThreadPool");

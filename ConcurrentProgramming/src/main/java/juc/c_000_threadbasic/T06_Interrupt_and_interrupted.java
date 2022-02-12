@@ -4,6 +4,7 @@ import util.SleepHelperUtil;
 
 /**
  * interrupt与interrupted()
+ * @author yzw
  */
 public class T06_Interrupt_and_interrupted {
     public static void main(String[] args) {

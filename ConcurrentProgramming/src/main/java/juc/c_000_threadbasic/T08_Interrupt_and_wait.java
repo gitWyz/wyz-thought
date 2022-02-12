@@ -3,7 +3,8 @@ package juc.c_000_threadbasic;
 import util.SleepHelperUtil;
 
 /**
- * interrupt与sleep() wait() join()
+ * interrupt与wait()
+ * @author yzw
  */
 public class T08_Interrupt_and_wait {
 
@@ -14,6 +15,7 @@ public class T08_Interrupt_and_wait {
             synchronized (o) {
                 try {
                     o.wait();
+                    System.out.println("线程wait结束");
                 } catch (InterruptedException e) {
                     System.out.println("Thread is interrupted!");
                     System.out.println(Thread.currentThread().isInterrupted());

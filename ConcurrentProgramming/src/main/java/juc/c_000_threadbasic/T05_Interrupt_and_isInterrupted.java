@@ -5,6 +5,7 @@ import util.SleepHelperUtil;
 /**
  * interrupt()与isInterrupted()
  * 设置标志位 + 查询标志位
+ * @author yzw
  */
 public class T05_Interrupt_and_isInterrupted {
     public static void main(String[] args) {

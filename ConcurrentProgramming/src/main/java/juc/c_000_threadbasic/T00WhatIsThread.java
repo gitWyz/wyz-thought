@@ -6,7 +6,7 @@ import static java.lang.System.*;
 
 /**
  * 什么是线程
- * @author mi
+ * @author wangyz
  */
 public class T00WhatIsThread {
     private static final int SIZE = 10;

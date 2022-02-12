@@ -1,7 +1,11 @@
 package juc.c_000_threadbasic;
 
+/**
+ * @author yzw
+ */
 public class T12_Final_01 {
-    public final static int z; //最好在声明的时候就进行初始化
+    //最好在声明的时候就进行初始化
+    public final static int z;
 
     static {
         z = 9;

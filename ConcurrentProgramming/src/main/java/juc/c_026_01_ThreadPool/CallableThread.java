@@ -14,7 +14,7 @@ public class CallableThread implements Callable {
         int i = Runtime.getRuntime().availableProcessors();
         System.out.println(i);
         ExecutorService es = Executors.newSingleThreadExecutor();
-        Callable<String> call = new CallableThread();
+        CallableThread call = new CallableThread();
         Future<String> fu = es.submit(call);
         es.shutdown();
         Thread.sleep(5000);

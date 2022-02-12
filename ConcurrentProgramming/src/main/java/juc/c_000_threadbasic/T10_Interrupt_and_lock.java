@@ -5,7 +5,8 @@ import util.SleepHelperUtil;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * interrupt与sleep() wait() join()
+ * interrupt与lock
+ * @author yzw
  */
 public class T10_Interrupt_and_lock {
 
