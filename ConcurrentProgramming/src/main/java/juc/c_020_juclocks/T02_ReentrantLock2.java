@@ -1,29 +1,21 @@
-/**
- * reentrantlock�������synchronized
- * ����m1����this,ֻ��m1ִ����ϵ�ʱ��,m2����ִ��
- * �����Ǹ�ϰsynchronized��ԭʼ������
- * <p>
- * ʹ��reentrantlock�������ͬ���Ĺ���
- * ��Ҫע����ǣ�����Ҫ����Ҫ����Ҫ�ֶ��ͷ�������Ҫ������˵���飩
- * ʹ��syn�����Ļ���������쳣��jvm���Զ��ͷ���������lock�����ֶ��ͷ�������˾�����finally�н��������ͷ�
- *
- * @author wyz
- */
 package juc.c_020_juclocks;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * @author yzw
+ */
 public class T02_ReentrantLock2 {
 	Lock lock = new ReentrantLock();
 
 	void m1() {
+		//synchronized(this)
+		lock.lock();
 		try {
-			lock.lock(); //synchronized(this)
 			for (int i = 0; i < 10; i++) {
 				TimeUnit.SECONDS.sleep(1);
-
 				System.out.println(i);
 			}
 		} catch (InterruptedException e) {

@@ -1,11 +1,10 @@
+package juc.c_001_sync_basics;
+
 /**
  * synchronized
  *
  * @author wyz
  */
-
-package juc.c_001_sync_basics;
-
 public class T08_01_SyncMethodAndNotSyncMethod {
 
     private int count = 10;

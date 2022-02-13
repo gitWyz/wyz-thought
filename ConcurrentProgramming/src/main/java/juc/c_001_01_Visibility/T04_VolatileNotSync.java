@@ -1,19 +1,19 @@
-/**
- * volatile�����ܱ�֤����̹߳�ͬ�޸�running����ʱ�������Ĳ�һ�����⣬Ҳ����˵volatile�������synchronized
- * ��������ĳ��򣬲��������
- *
- * @author wyz
- */
 package juc.c_001_01_Visibility;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author wyz
+ */
 public class T04_VolatileNotSync {
-    volatile int count = 0;
+    static volatile int count = 0;
 
     void m() {
-        for (int i = 0; i < 10000; i++) count++;
+        for (int i = 0; i < 10000; i++) {
+            count++;
+        }
     }
 
     public static void main(String[] args) {

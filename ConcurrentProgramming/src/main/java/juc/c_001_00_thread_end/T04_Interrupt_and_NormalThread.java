@@ -4,6 +4,7 @@ import util.SleepHelperUtil;
 
 /**
  * interrupt是设定标志位
+ * @author yzw
  */
 public class T04_Interrupt_and_NormalThread {
 

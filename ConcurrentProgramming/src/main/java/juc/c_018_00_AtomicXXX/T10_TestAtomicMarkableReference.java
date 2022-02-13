@@ -6,6 +6,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
+/**
+ * @author yzw
+ */
 public class T10_TestAtomicMarkableReference {
 
     private static class Order {

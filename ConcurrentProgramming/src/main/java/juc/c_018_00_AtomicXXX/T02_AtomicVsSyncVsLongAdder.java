@@ -4,6 +4,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 
+/**
+ * @author yzw
+ */
 public class T02_AtomicVsSyncVsLongAdder {
     private static final int THREAD_COUNT = 50;
     private static final int LOOPS_COUNT = 100_0000;
@@ -24,9 +27,13 @@ public class T02_AtomicVsSyncVsLongAdder {
 
         long start = System.currentTimeMillis();
 
-        for (Thread t : threads) t.start();
+        for (Thread t : threads) {
+            t.start();
+        }
 
-        for (Thread t : threads) t.join();
+        for (Thread t : threads) {
+            t.join();
+        }
 
         long end = System.currentTimeMillis();
 

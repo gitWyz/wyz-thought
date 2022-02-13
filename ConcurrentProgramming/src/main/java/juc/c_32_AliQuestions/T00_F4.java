@@ -7,8 +7,8 @@ import java.util.List;
 
 /**
  * 最原始的方法，Thread run()重写
+ * @author yzw
  */
-
 public class T00_F4 {
 
     private static class Boss extends Thread {

@@ -1,31 +1,19 @@
-/**
- * reentrantlock�������synchronized
- * ����m1����this,ֻ��m1ִ����ϵ�ʱ��,m2����ִ��
- * �����Ǹ�ϰsynchronized��ԭʼ������
- * <p>
- * ʹ��reentrantlock�������ͬ���Ĺ���
- * ��Ҫע����ǣ�����Ҫ����Ҫ����Ҫ�ֶ��ͷ�������Ҫ������˵���飩
- * ʹ��syn�����Ļ���������쳣��jvm���Զ��ͷ���������lock�����ֶ��ͷ�������˾�����finally�н��������ͷ�
- * <p>
- * ʹ��reentrantlock���Խ��С�����������tryLock�������޷�������������ָ��ʱ�����޷��������߳̿��Ծ����Ƿ�����ȴ�
- *
- * @author wyz
- */
 package juc.c_020_juclocks;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * @author yzw
+ */
 public class T03_ReentrantLock3 {
 	Lock lock = new ReentrantLock();
-
 	void m1() {
+		lock.lock();
 		try {
-			lock.lock();
 			for (int i = 0; i < 3; i++) {
 				TimeUnit.SECONDS.sleep(1);
-
 				System.out.println(i);
 			}
 		} catch (InterruptedException e) {
@@ -35,27 +23,22 @@ public class T03_ReentrantLock3 {
 		}
 	}
 
-	/**
-	 * ʹ��tryLock���г�������������������񣬷�����������ִ��
-	 * ���Ը���tryLock�ķ���ֵ���ж��Ƿ�����
-	 * Ҳ����ָ��tryLock��ʱ�䣬����tryLock(time)�׳��쳣������Ҫע��unclock�Ĵ�������ŵ�finally��
-	 */
 	void m2() {
-		/*
-		boolean locked = lock.tryLock();
-		System.out.println("m2 ..." + locked);
-		if(locked) lock.unlock();
-		*/
-
+		/**
+		 * boolean locked = lock.tryLock();
+		 * System.out.println("m2 ..." + locked);
+		 * if(locked) lock.unlock();
+		 */
 		boolean locked = false;
-
 		try {
 			locked = lock.tryLock(5, TimeUnit.SECONDS);
 			System.out.println("m2 ..." + locked);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
-			if (locked) lock.unlock();
+			if (locked) {
+				lock.unlock();
+			}
 		}
 
 	}

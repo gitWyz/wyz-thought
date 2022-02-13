@@ -5,6 +5,9 @@ import util.SleepHelperUtil;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
+/**
+ * @author yzw
+ */
 public class T09_TestAtomicStampedReference {
 
     private static class Order {

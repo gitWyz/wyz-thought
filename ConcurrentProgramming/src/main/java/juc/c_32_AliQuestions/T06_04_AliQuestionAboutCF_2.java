@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * 问题：可以归为分布式事务失败回滚的手工实现
  * 代码依然不太完善，等待你的进一步完善
+ * @author yzw
  */
-
 public class T06_04_AliQuestionAboutCF_2 {
     //任务执行结束的三种状态
     private static enum Result {

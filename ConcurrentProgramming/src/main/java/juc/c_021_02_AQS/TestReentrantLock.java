@@ -2,6 +2,9 @@ package juc.c_021_02_AQS;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * @author yzw
+ */
 public class TestReentrantLock {
 
     private static volatile int i = 0;

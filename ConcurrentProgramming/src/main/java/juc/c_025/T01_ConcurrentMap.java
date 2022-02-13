@@ -1,7 +1,7 @@
 /**
  * http://blog.csdn.net/sunxianghuang/article/details/52221913
  * http://www.educity.cn/java/498061.html
- * �Ķ�concurrentskiplistmap
+ * concurrentskiplistmap
  */
 package juc.c_025;
 
@@ -10,6 +10,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * @author yzw
+ */
 public class T01_ConcurrentMap {
     public static void main(String[] args) {
         Map<String, String> map = new ConcurrentHashMap<>();

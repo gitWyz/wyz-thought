@@ -2,6 +2,9 @@ package juc.c_021_02_AQS;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
+/**
+ * @author yzw
+ */
 public class Sync extends AbstractQueuedSynchronizer {
     @Override
     protected boolean tryAcquire(int arg) {

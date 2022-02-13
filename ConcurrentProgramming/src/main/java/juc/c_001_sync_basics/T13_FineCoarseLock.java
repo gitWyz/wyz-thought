@@ -1,3 +1,7 @@
+package juc.c_001_sync_basics;
+
+import java.util.concurrent.TimeUnit;
+
 /**
  * synchronized优化
  * 同步代码块中的语句越少越好
@@ -5,11 +9,6 @@
  *
  * @author wyz
  */
-package juc.c_001_sync_basics;
-
-import java.util.concurrent.TimeUnit;
-
-
 public class T13_FineCoarseLock {
 
     int count = 0;

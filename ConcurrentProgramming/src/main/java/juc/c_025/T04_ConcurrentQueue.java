@@ -3,6 +3,9 @@ package juc.c_025;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * @author yzw
+ */
 public class T04_ConcurrentQueue {
     public static void main(String[] args) {
         Queue<String> strs = new ConcurrentLinkedQueue<>();

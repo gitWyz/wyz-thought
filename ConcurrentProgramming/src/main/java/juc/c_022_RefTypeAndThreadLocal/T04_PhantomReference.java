@@ -29,6 +29,9 @@ import java.nio.ByteBuffer;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @author yzw
+ */
 public class T04_PhantomReference {
     private static final List<Object> LIST = new LinkedList<>();
     private static final ReferenceQueue<M> QUEUE = new ReferenceQueue<>();

@@ -3,6 +3,10 @@ package juc.c_33_TheDinningPhilosophersProblem;
 
 import util.SleepHelperUtil;
 
+/**
+ * 死锁
+ * @author yzw
+ */
 public class T01_DeadLock {
     public static void main(String[] args) {
         ChopStick cs0 = new ChopStick();

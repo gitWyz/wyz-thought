@@ -3,7 +3,7 @@ package juc.c_001_02_FalseSharing;
 import java.util.concurrent.CountDownLatch;
 
 public class T01_CacheLinePadding {
-    public static long COUNT = 10_0000_0000L;
+    public static long COUNT = 1_0000_0000L;
 
     private static class T {
         private long p1, p2, p3, p4, p5, p6, p7;
@@ -37,10 +37,10 @@ public class T01_CacheLinePadding {
             latch.countDown();
         });
 
-        final long start = System.nanoTime();
+        final long start = System.currentTimeMillis();
         t1.start();
         t2.start();
         latch.await();
-        System.out.println((System.nanoTime() - start) / 100_0000);
+        System.out.println(System.currentTimeMillis() - start);
     }
 }

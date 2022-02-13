@@ -1,15 +1,15 @@
+package juc.c_001_sync_basics;
+
 /**
  * 对比前一个小程序，分析一下这个程序的输出
  *
  * @author wyz
  */
-
-package juc.c_001_sync_basics;
-
 public class T07_SyncAndVolatile_02 implements Runnable {
 
     private int count = 10;
 
+    @Override
     public synchronized void run() {
         count--;
         System.out.println(Thread.currentThread().getName() + " count = " + count);

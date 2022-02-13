@@ -2,6 +2,9 @@ package juc.c_025;
 
 import java.util.PriorityQueue;
 
+/**
+ * @author yzw
+ */
 public class T07_01_PriorityQueque {
     public static void main(String[] args) {
         PriorityQueue<String> q = new PriorityQueue<>();

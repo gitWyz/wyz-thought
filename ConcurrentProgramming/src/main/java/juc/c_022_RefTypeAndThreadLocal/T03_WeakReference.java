@@ -7,6 +7,9 @@ import util.SleepHelperUtil;
 
 import java.lang.ref.WeakReference;
 
+/**
+ * @author yzw
+ */
 public class T03_WeakReference {
     public static void main(String[] args) {
         WeakReference<M> m = new WeakReference<>(new M());

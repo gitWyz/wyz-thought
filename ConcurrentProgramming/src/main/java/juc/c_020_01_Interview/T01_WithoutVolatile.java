@@ -1,19 +1,12 @@
-/**
- * �����������⣺���Ա�����
- * ʵ��һ���������ṩ����������add��size
- * д�����̣߳��߳�1���10��Ԫ�ص������У��߳�2ʵ�ּ��Ԫ�صĸ�������������5��ʱ���߳�2������ʾ������
- * <p>
- * �����������������������������
- *
- * @author wyz
- */
 package juc.c_020_01_Interview;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * @author yzw
+ */
 public class T01_WithoutVolatile {
 
     List lists = new ArrayList();
@@ -44,11 +37,11 @@ public class T01_WithoutVolatile {
 
         new Thread(() -> {
             while (true) {
-                if (c.size() == 5) {
+                if (c.size() > 5) {
                     break;
                 }
             }
-            System.out.println("t2 ����");
+            System.out.println("t2");
         }, "t2").start();
     }
 }

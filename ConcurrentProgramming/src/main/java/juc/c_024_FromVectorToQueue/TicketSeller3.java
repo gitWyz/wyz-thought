@@ -1,19 +1,3 @@
-/**
- * ��N�Ż�Ʊ��ÿ��Ʊ����һ�����
- * ͬʱ��10�����ڶ�����Ʊ
- * ��дһ��ģ�����
- * <p>
- * ��������ĳ�����ܻ������Щ���⣿
- * �ظ����ۣ��������ۣ�
- * <p>
- * ʹ��Vector����Collections.synchronizedXXX
- * ����һ�£������ܽ��������
- * <p>
- * �������A��B����ͬ���ģ���A��B��ɵĸ��ϲ���Ҳδ����ͬ���ģ���Ȼ��Ҫ�Լ�����ͬ��
- * ������������ж�size�ͽ���remove������һ������ԭ�Ӳ���
- *
- * @author ��ʿ��
- */
 package juc.c_024_FromVectorToQueue;
 
 import java.util.LinkedList;
@@ -25,7 +9,7 @@ public class TicketSeller3 {
 
 
     static {
-        for (int i = 0; i < 1000; i++) tickets.add("Ʊ ��ţ�" + i);
+        for (int i = 0; i < 1000; i++) tickets.add("ticket" + i);
     }
 
     public static void main(String[] args) {
@@ -42,7 +26,7 @@ public class TicketSeller3 {
                             e.printStackTrace();
                         }
 
-                        System.out.println("������--" + tickets.remove(0));
+                        System.out.println("--" + tickets.remove(0));
                     }
                 }
             }).start();

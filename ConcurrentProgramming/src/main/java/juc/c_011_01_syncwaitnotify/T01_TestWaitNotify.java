@@ -2,6 +2,9 @@ package juc.c_011_01_syncwaitnotify;
 
 import util.SleepHelperUtil;
 
+/**
+ * @author yzw
+ */
 public class T01_TestWaitNotify {
     private static Object o = new Object();
 

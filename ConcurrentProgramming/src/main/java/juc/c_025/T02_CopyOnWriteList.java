@@ -1,10 +1,3 @@
-/**
- * дʱ�������� copy on write
- * ���̻߳����£�дʱЧ�ʵͣ���ʱЧ�ʸ�
- * �ʺ�д�ٶ���Ļ���
- *
- * @author ��ʿ��
- */
 package juc.c_025;
 
 import java.util.ArrayList;
@@ -14,10 +7,13 @@ import java.util.Random;
 import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * @author yzw
+ */
 public class T02_CopyOnWriteList {
     public static void main(String[] args) {
         List<String> lists =
-                //new ArrayList<>(); //�������������⣡
+                //new ArrayList<>();
                 //new Vector();
                 new CopyOnWriteArrayList<>();
         Random r = new Random();

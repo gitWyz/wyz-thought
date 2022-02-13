@@ -1,3 +1,7 @@
+package juc.c_001_sync_basics;
+
+import java.util.concurrent.TimeUnit;
+
 /**
  * 一个同步方法可以调用另外一个同步方法，一个线程已经拥有某个对象的锁，再次申请的时候仍然会得到该对象的锁.
  * 也就是说synchronized获得的锁是可重入的
@@ -5,10 +9,6 @@
  *
  * @author wyz
  */
-package juc.c_001_sync_basics;
-
-import java.util.concurrent.TimeUnit;
-
 public class T11_SyncAndOverWrite {
     synchronized void m() {
         System.out.println("m start");

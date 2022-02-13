@@ -5,6 +5,9 @@ import util.SleepHelperUtil;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * @author yzw
+ */
 public class T05_TestAtomicReference {
 
     private static class Student {

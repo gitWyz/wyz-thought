@@ -1,12 +1,10 @@
-/**
- * ThreadLocal�ֲ߳̾�����
- *
- * @author ��ʿ��
- */
 package juc.c_022_RefTypeAndThreadLocal;
 
 import util.SleepHelperUtil;
 
+/**
+ * @author yzw
+ */
 public class ThreadLocal1 {
     static Person p = new Person();
 

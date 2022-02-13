@@ -4,6 +4,9 @@ import util.SleepHelperUtil;
 
 import java.util.concurrent.locks.LockSupport;
 
+/**
+ * @author yzw
+ */
 public class T05_InterruptAndPark {
     public static void main(String[] args) {
 

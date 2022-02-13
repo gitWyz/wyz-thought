@@ -1,14 +1,10 @@
-/**
- * reentrantlock�������synchronized
- * ����������m1����this,ֻ��m1ִ����ϵ�ʱ��,m2����ִ��
- * �����Ǹ�ϰsynchronized��ԭʼ������
- *
- * @author wyz
- */
 package juc.c_020_juclocks;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author yzw
+ */
 public class T01_ReentrantLock1 {
     synchronized void m1() {
         for (int i = 0; i < 10; i++) {
@@ -18,7 +14,9 @@ public class T01_ReentrantLock1 {
                 e.printStackTrace();
             }
             System.out.println(i);
-            if (i == 2) m2();
+            if (i == 2) {
+                m2();
+            }
         }
 
     }

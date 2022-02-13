@@ -1,32 +1,14 @@
-/**
- * �����������⣺���Ա�����
- * ʵ��һ���������ṩ����������add��size
- * д�����̣߳��߳�1���10��Ԫ�ص������У��߳�2ʵ�ּ��Ԫ�صĸ�������������5��ʱ���߳�2������ʾ������
- * <p>
- * ��lists���volatile֮��t2�ܹ��ӵ�֪ͨ�����ǣ�t2�̵߳���ѭ�����˷�cpu�����������ѭ��������ô���أ�
- * <p>
- * ����ʹ��wait��notify������wait���ͷ�������notify�����ͷ���
- * ��Ҫע����ǣ��������ַ���������Ҫ��֤t2��ִ�У�Ҳ����������t2�����ſ���
- * <p>
- * �Ķ�����ĳ��򣬲�����������
- * ���Զ���������������size=5ʱt2�˳�������t1����ʱt2�Ž��յ�֪ͨ���˳�
- * ��������Ϊʲô��
- * <p>
- * notify֮��t1�����ͷ�����t2�˳���Ҳ����notify��֪ͨt1����ִ��
- * ����ͨ�Ź��̱ȽϷ���
- *
- * @author wyz
- */
 package juc.c_020_01_Interview;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * @author yzw
+ */
 public class T04_NotifyFreeLock {
 
-    //���volatile��ʹt2�ܹ��õ�֪ͨ
     volatile List lists = new ArrayList();
 
     public void add(Object o) {
@@ -44,7 +26,7 @@ public class T04_NotifyFreeLock {
 
         new Thread(() -> {
             synchronized (lock) {
-                System.out.println("t2����");
+                System.out.println("t2 start");
                 if (c.size() != 5) {
                     try {
                         lock.wait();
@@ -52,8 +34,8 @@ public class T04_NotifyFreeLock {
                         e.printStackTrace();
                     }
                 }
-                System.out.println("t2 ����");
-                //֪ͨt1����ִ��
+                System.out.println("t2 end");
+                //ͨ唤醒֪t1执行
                 lock.notify();
             }
 
@@ -66,7 +48,7 @@ public class T04_NotifyFreeLock {
         }
 
         new Thread(() -> {
-            System.out.println("t1����");
+            System.out.println("t1 start");
             synchronized (lock) {
                 for (int i = 0; i < 10; i++) {
                     c.add(new Object());
@@ -74,7 +56,6 @@ public class T04_NotifyFreeLock {
 
                     if (c.size() == 5) {
                         lock.notify();
-                        //�ͷ�������t2����ִ��
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {

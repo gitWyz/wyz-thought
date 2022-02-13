@@ -1,26 +1,19 @@
-/**
- * ��N�Ż�Ʊ��ÿ��Ʊ����һ�����
- * ͬʱ��10�����ڶ�����Ʊ
- * ��дһ��ģ�����
- * <p>
- * ��������ĳ�����ܻ������Щ���⣿
- * <p>
- * ʹ��Vector����Collections.synchronizedXXX
- * ����һ�£������ܽ��������
- *
- * @author ��ʿ��
- */
 package juc.c_024_FromVectorToQueue;
 
 import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author yzw
+ */
 public class TicketSeller2 {
     static Vector<String> tickets = new Vector<>();
 
 
     static {
-        for (int i = 0; i < 1000; i++) tickets.add("Ʊ ��ţ�" + i);
+        for (int i = 0; i < 1000; i++) {
+            tickets.add("ticket" + i);
+        }
     }
 
     public static void main(String[] args) {
@@ -36,7 +29,7 @@ public class TicketSeller2 {
                     }
 
 
-                    System.out.println("������--" + tickets.remove(0));
+                    System.out.println("--" + tickets.remove(0));
                 }
             }).start();
         }

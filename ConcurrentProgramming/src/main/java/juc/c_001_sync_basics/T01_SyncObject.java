@@ -13,7 +13,8 @@ public class T01_SyncObject {
     private final Object o = new Object();
 
     public void m() {
-        synchronized (o) { //任何线程要执行下面的代码，必须先锁定o
+        //任何线程要执行下面的代码，必须先锁定o
+        synchronized (o) {
             count--;
             System.out.println(Thread.currentThread().getName() + " count = " + count);
         }

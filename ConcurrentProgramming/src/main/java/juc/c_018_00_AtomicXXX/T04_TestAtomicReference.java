@@ -2,6 +2,9 @@ package juc.c_018_00_AtomicXXX;
 
 import util.SleepHelperUtil;
 
+/**
+ * @author yzw
+ */
 public class T04_TestAtomicReference {
 
     private static class Student {

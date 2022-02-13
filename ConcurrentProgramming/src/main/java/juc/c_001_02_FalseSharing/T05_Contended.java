@@ -1,6 +1,4 @@
 package juc.c_001_02_FalseSharing;
-
-
 import sun.misc.Contended;
 //注意：运行这个小程序的时候，需要加参数：-XX:-RestrictContended
 import java.util.concurrent.CountDownLatch;

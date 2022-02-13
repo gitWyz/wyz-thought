@@ -1,22 +1,23 @@
+package juc.c_001_sync_basics;
+
 /**
  * synchronized
  *
  * @author wyz
  */
-
-package juc.c_001_sync_basics;
-
 public class T04_SyncStatic {
 
     private static int count = 10;
 
-    public synchronized static void m() { //等同于synchronized(XX.class)
+    //等同于synchronized(XX.class)
+    public synchronized static void m() {
         count--;
         System.out.println(Thread.currentThread().getName() + " count = " + count);
     }
 
     public static void mm() {
-        synchronized (T04_SyncStatic.class) { //考虑一下这里写synchornized(this)是否可以？
+        //考虑一下这里写synchornized(this)是否可以？
+        synchronized (T04_SyncStatic.class) {
             count--;
         }
     }

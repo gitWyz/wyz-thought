@@ -2,6 +2,10 @@ package juc.c_001_00_thread_end;
 
 import util.SleepHelperUtil;
 
+/**
+ * 线程结束
+ * @author yzw
+ */
 public class T01_Stop {
     public static void main(String[] args) {
         Thread t = new Thread(() -> {

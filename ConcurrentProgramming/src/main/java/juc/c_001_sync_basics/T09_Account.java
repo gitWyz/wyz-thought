@@ -1,3 +1,7 @@
+package juc.c_001_sync_basics;
+
+import java.util.concurrent.TimeUnit;
+
 /**
  * 面试题：模拟银行账户
  * 对业务写方法加锁
@@ -5,12 +9,8 @@
  * 这样行不行？
  * <p>
  * 容易产生脏读问题（dirtyRead）
+ * @author yzw
  */
-
-package juc.c_001_sync_basics;
-
-import java.util.concurrent.TimeUnit;
-
 public class T09_Account {
     String name;
     double balance;

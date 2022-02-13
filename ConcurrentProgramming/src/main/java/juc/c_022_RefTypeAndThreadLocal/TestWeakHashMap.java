@@ -3,6 +3,9 @@ package juc.c_022_RefTypeAndThreadLocal;
 import java.nio.ByteBuffer;
 import java.util.WeakHashMap;
 
+/**
+ * @author yzw
+ */
 public class TestWeakHashMap {
     public static void main(String[] args) {
         WeakHashMap<String, String> map = new WeakHashMap<>();

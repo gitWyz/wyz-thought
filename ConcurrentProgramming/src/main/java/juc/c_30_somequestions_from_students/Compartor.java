@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
+/**
+ * @author yzw
+ */
 public class Compartor {
 
 

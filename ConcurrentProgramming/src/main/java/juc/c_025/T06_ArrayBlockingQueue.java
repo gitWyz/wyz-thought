@@ -5,6 +5,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author yzw
+ */
 public class T06_ArrayBlockingQueue {
 
     static BlockingQueue<String> strs = new ArrayBlockingQueue<>(10);

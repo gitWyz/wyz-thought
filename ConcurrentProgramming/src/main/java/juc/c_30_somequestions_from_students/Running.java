@@ -4,8 +4,8 @@ import java.util.Random;
 
 /**
  * 模拟一场跑步比赛，100米，100个人
+ * @author yzw
  */
-
 public class Running {
     private static final double LAP_LENGTH = 100.0;
 

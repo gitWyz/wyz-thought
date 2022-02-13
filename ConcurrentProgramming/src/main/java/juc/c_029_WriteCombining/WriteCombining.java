@@ -1,5 +1,8 @@
 package juc.c_029_WriteCombining;
 
+/**
+ * @author yzw
+ */
 public final class WriteCombining {
 
     private static final int ITERATIONS = Integer.MAX_VALUE;

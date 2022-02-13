@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * @author yzw
+ */
 public class T12_TestAtomicFieldUpdater {
 
     @Test

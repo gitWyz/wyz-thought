@@ -6,6 +6,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * @author yzw
+ */
 public class T07_TestAtomicReference {
 
     private static class Order {

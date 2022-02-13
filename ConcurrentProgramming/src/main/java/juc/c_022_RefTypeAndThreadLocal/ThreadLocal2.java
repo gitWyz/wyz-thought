@@ -1,17 +1,10 @@
-/**
- * ThreadLocal�ֲ߳̾�����
- * <p>
- * ThreadLocal��ʹ�ÿռ任ʱ�䣬synchronized��ʹ��ʱ�任�ռ�
- * ������hibernate��session�ʹ�����ThreadLocal�У�����synchronized��ʹ��
- * <p>
- * ��������ĳ������ThreadLocal
- *
- * @author ��ʿ��
- */
 package juc.c_022_RefTypeAndThreadLocal;
 
 import util.SleepHelperUtil;
 
+/**
+ * @author yzw
+ */
 public class ThreadLocal2 {
     //volatile static Person p = new Person();
     static ThreadLocal<Person> tl = new ThreadLocal<>();

@@ -4,6 +4,9 @@ import util.SleepHelperUtil;
 
 import java.util.concurrent.locks.LockSupport;
 
+/**
+ * @author yzw
+ */
 public class T02_TestWaitNotify {
 
     public static void main(String[] args) {

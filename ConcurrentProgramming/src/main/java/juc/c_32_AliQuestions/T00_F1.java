@@ -4,6 +4,7 @@ import util.SleepHelperUtil;
 
 /**
  * 最原始的方法，Thread run()重写
+ * @author yzw
  */
 
 public class T00_F1 {

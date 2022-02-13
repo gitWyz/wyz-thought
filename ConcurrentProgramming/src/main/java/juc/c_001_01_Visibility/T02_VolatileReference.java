@@ -5,6 +5,9 @@ package juc.c_001_01_Visibility;
 
 import util.SleepHelperUtil;
 
+/**
+ * @author yzw
+ */
 public class T02_VolatileReference {
 
     private static class A {

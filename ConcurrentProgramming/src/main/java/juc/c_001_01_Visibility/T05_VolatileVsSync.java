@@ -1,14 +1,10 @@
-/**
- * �Ա���һ�����򣬿�����synchronized�����synchronized���Ա�֤�ɼ��Ժ�ԭ���ԣ�volatileֻ�ܱ�֤�ɼ���
- *
- * @author wyz
- */
 package juc.c_001_01_Visibility;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * @author yzw
+ */
 public class T05_VolatileVsSync {
     /*volatile*/ int count = 0;
 

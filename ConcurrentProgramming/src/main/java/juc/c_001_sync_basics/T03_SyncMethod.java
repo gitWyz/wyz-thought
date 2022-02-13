@@ -1,11 +1,10 @@
+package juc.c_001_sync_basics;
+
 /**
  * synchronized关键字，对某个对象加锁
  *
  * @author wyz
  */
-
-package juc.c_001_sync_basics;
-
 public class T03_SyncMethod {
 
     private int count = 10;

@@ -1,29 +1,3 @@
-/**
- * �����������⣺���Ա�����
- * ʵ��һ���������ṩ����������add��size
- * д�����̣߳��߳�1���10��Ԫ�ص������У��߳�2ʵ�ּ��Ԫ�صĸ�������������5��ʱ���߳�2������ʾ������
- * <p>
- * ��lists���volatile֮��t2�ܹ��ӵ�֪ͨ�����ǣ�t2�̵߳���ѭ�����˷�cpu�����������ѭ��������ô���أ�
- * <p>
- * ����ʹ��wait��notify������wait���ͷ�������notify�����ͷ���
- * ��Ҫע����ǣ��������ַ���������Ҫ��֤t2��ִ�У�Ҳ����������t2�����ſ���
- * <p>
- * �Ķ�����ĳ��򣬲�����������
- * ���Զ���������������size=5ʱt2�˳�������t1����ʱt2�Ž��յ�֪ͨ���˳�
- * ��������Ϊʲô��
- * <p>
- * notify֮��t1�����ͷ�����t2�˳���Ҳ����notify��֪ͨt1����ִ��
- * ����ͨ�Ź��̱ȽϷ���
- * <p>
- * ʹ��Latch�����ţ����wait notify������֪ͨ
- * �ô���ͨ�ŷ�ʽ�򵥣�ͬʱҲ����ָ���ȴ�ʱ��
- * ʹ��await��countdown�������wait��notify
- * CountDownLatch���漰��������count��ֵΪ��ʱ��ǰ�̼߳�������
- * �����漰ͬ����ֻ���漰�߳�ͨ�ŵ�ʱ����synchronized + wait/notify���Ե�̫����
- * ��ʱӦ�ÿ���countdownlatch/cyclicbarrier/semaphore
- *
- * @author wyz
- */
 package juc.c_020_01_Interview;
 
 import java.util.ArrayList;
@@ -31,9 +5,11 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author yzw
+ */
 public class T05_CountDownLatch {
 
-    // ���volatile��ʹt2�ܹ��õ�֪ͨ
     volatile List lists = new ArrayList();
 
     public void add(Object o) {
@@ -50,18 +26,17 @@ public class T05_CountDownLatch {
         CountDownLatch latch = new CountDownLatch(1);
 
         new Thread(() -> {
-            System.out.println("t2����");
+            System.out.println("t2 start");
             if (c.size() != 5) {
                 try {
                     latch.await();
 
-                    //Ҳ����ָ���ȴ�ʱ��
                     //latch.await(5000, TimeUnit.MILLISECONDS);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-            System.out.println("t2 ����");
+            System.out.println("t2 end");
 
         }, "t2").start();
 
@@ -72,13 +47,12 @@ public class T05_CountDownLatch {
         }
 
         new Thread(() -> {
-            System.out.println("t1����");
+            System.out.println("t1 start");
             for (int i = 0; i < 10; i++) {
                 c.add(new Object());
                 System.out.println("add " + i);
 
                 if (c.size() == 5) {
-                    // �����ţ���t2����ִ��
                     latch.countDown();
                 }
 

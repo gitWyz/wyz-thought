@@ -3,6 +3,9 @@ package juc.c_018_00_AtomicXXX;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.LongAdder;
 
+/**
+ * @author yzw
+ */
 public class T03________SyncVsLongAdder {
     static long count2 = 0L;
     static LongAdder count = new LongAdder();
@@ -14,7 +17,9 @@ public class T03________SyncVsLongAdder {
         for (int i = 0; i < threads.length; i++) {
             threads[i] =
                     new Thread(() -> {
-                        for (int k = 0; k < 100000; k++) count.increment();
+                        for (int k = 0; k < 100000; k++) {
+                            count.increment();
+                        }
                     });
         }
 

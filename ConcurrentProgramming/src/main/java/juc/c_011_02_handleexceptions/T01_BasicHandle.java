@@ -2,6 +2,7 @@ package juc.c_011_02_handleexceptions;
 
 /**
  * 线程异常不会被另外一个线程捕获
+ * @author yzw
  */
 public class T01_BasicHandle {
     public static void main(String[] args) {

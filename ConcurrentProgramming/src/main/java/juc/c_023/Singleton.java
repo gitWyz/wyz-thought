@@ -1,16 +1,11 @@
-/**
- * 线程安全的单例模式：
- * <p>
- * 阅读文章：http://www.cnblogs.com/xudong-bupt/p/3433643.html
- * <p>
- * 更好的是采用下面的方式，既不用加锁，也能实现懒加载
- *
- * @author 马士兵
- */
 package juc.c_023;
 
 import java.util.Arrays;
 
+/**
+ * 线程安全的单例模式
+ * @author yzw
+ */
 public class Singleton {
 
     private Singleton() {
@@ -25,15 +20,32 @@ public class Singleton {
         return Inner.s;
     }
 
-    public static void main(String[] args) {
-        Thread[] ths = new Thread[200];
-        for (int i = 0; i < ths.length; i++) {
-            ths[i] = new Thread(() -> {
-                System.out.println(Singleton.getSingle());
-            });
-        }
+    static void fun(){}
 
-        Arrays.asList(ths).forEach(o -> o.start());
+    public static void main(String[] args) {
+        Singleton.fun();
+        Singleton0.fun0();
+//        Thread[] ths = new Thread[20];
+//        for (int i = 0; i < ths.length; i++) {
+//            ths[i] = new Thread(() -> {
+//                System.out.println(Singleton.getSingle());
+//            });
+//        }
+//
+//        Arrays.asList(ths).forEach(o -> o.start());
+    }
+
+    static class Singleton0{
+        private final static Singleton0 obj = new Singleton0();
+        private Singleton0() {
+            System.out.println("我被new出来了");//每生成一个实例就打印这句话，便于测试。
+        }
+        public static Singleton0 getInstance() {
+            return obj;
+        }
+        public static void fun0(){
+
+        }
     }
 
 }

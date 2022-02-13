@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadFactory;
 
 /**
  * 线程异常不会被另外一个线程捕获
+ * @author yzw
  */
 public class T04_BasicHandle {
     public static void main(String[] args) {

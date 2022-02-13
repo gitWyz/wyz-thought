@@ -17,6 +17,7 @@ package juc.c_30_somequestions_from_students;
  * 第三行：第一组测试数据m个咖啡机的工作效率  V1  V2 。。。Vm
  * <p>
  * 第四行：第二组。。。。以此类推
+ * @author yzw
  */
 public class HuaweiCoffee {
 

@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * 最原始的方法，Thread run()重写
+ * @author yzw
  */
 
 public class T00_F2 {
@@ -23,7 +24,7 @@ public class T00_F2 {
         tasks.add(t3);
 
         //启动线程
-        tasks.stream().forEach((t) -> t.start());
+        tasks.forEach((t) -> t.start());
 
         //启动监视
         for (; ; ) {

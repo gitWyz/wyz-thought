@@ -19,12 +19,14 @@ import util.SleepHelperUtil;
 import java.io.IOException;
 
 public class T01_HelloVolatile {
-    private static /*volatile*/ boolean running = true;
+    private static volatile boolean running = true;
 
     private static void m() {
+        System.out.println("threadName="+Thread.currentThread().getName());
         System.out.println("m start");
+        int i = 0;
         while (running) {
-            System.out.println("hello");
+            System.out.println("hello" + i++);
         }
         System.out.println("m end!");
     }
@@ -36,7 +38,7 @@ public class T01_HelloVolatile {
         SleepHelperUtil.sleepSeconds(1);
 
         running = false;
-
+        System.out.println("threadName="+Thread.currentThread().getName());
         System.in.read();
     }
 }

@@ -1,11 +1,9 @@
-/**
- * synchronized
- *
- * @author wyz
- */
-
 package juc.c_001_sync_basics;
 
+/**
+ * synchronized
+ * @author wyz
+ */
 public class T02_SyncThis {
 
     private int count = 10;

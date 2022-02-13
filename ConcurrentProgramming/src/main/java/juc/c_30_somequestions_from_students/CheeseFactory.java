@@ -9,6 +9,7 @@ import java.util.concurrent.BlockingQueue;
  * 厂家有三条生产线，分别是牛奶供应生产线，发酵剂制作生产线，奶酪生产线。
  * 生产每份奶酪需要2份牛奶和一份发酵剂
  * 请设计生产系统
+ * @author yzw
  */
 public class CheeseFactory {
     private static class Cheese {

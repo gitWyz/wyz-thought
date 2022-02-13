@@ -1,11 +1,10 @@
+package juc.c_001_sync_basics;
+
 /**
  * 同步方法和非同步方法时候可以同时调用？
  *
- * @author wyz
+ * @author yzw
  */
-
-package juc.c_001_sync_basics;
-
 public class T08_02_SyncMethodAndNotSyncMethod {
 
     public synchronized void m1() {

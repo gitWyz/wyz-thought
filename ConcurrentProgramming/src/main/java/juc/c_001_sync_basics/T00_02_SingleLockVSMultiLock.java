@@ -2,6 +2,9 @@ package juc.c_001_sync_basics;
 
 import util.SleepHelperUtil;
 
+/**
+ * @author yzw
+ */
 public class T00_02_SingleLockVSMultiLock {
     private static Object o1 = new Object();
     private static Object o2 = new Object();

@@ -7,8 +7,8 @@ import java.util.concurrent.CompletableFuture;
 /**
  * 问题：可以归为分布式事务失败回滚的手工实现
  * 代码依然不太完善，等待你的进一步完善
+ * @author yzw
  */
-
 public class T06_03_AliQuestionAboutCF {
 
     public static void main(String[] args) throws Exception {

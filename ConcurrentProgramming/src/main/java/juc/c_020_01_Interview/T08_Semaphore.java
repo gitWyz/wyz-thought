@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+/**
+ * @author yzw
+ */
 public class T08_Semaphore {
 
     volatile List lists = new ArrayList();
@@ -28,8 +31,6 @@ public class T08_Semaphore {
                 for (int i = 0; i < 5; i++) {
                     c.add(new Object());
                     System.out.println("add " + i);
-
-
                 }
                 s.release();
             } catch (InterruptedException e) {
@@ -58,7 +59,7 @@ public class T08_Semaphore {
         t2 = new Thread(() -> {
             try {
                 s.acquire();
-                System.out.println("t2 ����");
+                System.out.println("t2 start");
                 s.release();
             } catch (InterruptedException e) {
                 e.printStackTrace();

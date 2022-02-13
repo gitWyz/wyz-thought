@@ -7,8 +7,8 @@ import java.util.List;
 
 /**
  * 最原始的方法，Thread run()重写
+ * @author yzw
  */
-
 public class T00_F6 {
 
     private static class Boss extends Thread {
@@ -31,7 +31,9 @@ public class T00_F6 {
 
         private void cancel(Worker worker) {
             for (Worker w : workers) {
-                if (w != worker) w.cancel();
+                if (w != worker) {
+                    w.cancel();
+                }
             }
         }
 
