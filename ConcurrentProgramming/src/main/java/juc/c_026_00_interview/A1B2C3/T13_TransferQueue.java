@@ -4,33 +4,36 @@ import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.TransferQueue;
 
 public class T13_TransferQueue {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         char[] aI = "1234567".toCharArray();
         char[] aC = "ABCDEFG".toCharArray();
 
         TransferQueue<Character> queue = new LinkedTransferQueue<Character>();
-        new Thread(() -> {
+        Thread t1 = new Thread(() -> {
             try {
                 for (char c : aI) {
-                    System.out.print(queue.take());
+                    //System.out.print(queue.take());
                     queue.transfer(c);
                 }
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }, "t1").start();
+        }, "t1");
+        t1.start();
 
-        new Thread(() -> {
+        Thread t2 = new Thread(() -> {
             try {
                 for (char c : aC) {
                     queue.transfer(c);
-                    System.out.print(queue.take());
+                    //System.out.print(queue.take());
                 }
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }, "t2").start();
+        }, "t2");
+        t2.start();
+        System.out.println(queue);
     }
 }
