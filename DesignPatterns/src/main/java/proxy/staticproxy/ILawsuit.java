@@ -1,6 +1,7 @@
 package proxy.staticproxy;
 
 /**
+ * 诉讼接口类:
  * @author wangyz
  * @date 2022/2/19
  */

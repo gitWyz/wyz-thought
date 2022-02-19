@@ -1,6 +1,7 @@
 package proxy.staticproxy;
 
 /**
+ * X程序员请的律师（代理对象）:
  * @author wangyz
  * @date 2022/2/19
  */
