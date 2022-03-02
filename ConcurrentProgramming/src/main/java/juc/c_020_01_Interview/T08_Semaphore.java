@@ -1,5 +1,7 @@
 package juc.c_020_01_Interview;
 
+import util.SleepHelperUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
@@ -31,6 +33,7 @@ public class T08_Semaphore {
                 for (int i = 0; i < 5; i++) {
                     c.add(new Object());
                     System.out.println("add " + i);
+                    SleepHelperUtil.sleepSeconds(1);
                 }
                 s.release();
             } catch (InterruptedException e) {
