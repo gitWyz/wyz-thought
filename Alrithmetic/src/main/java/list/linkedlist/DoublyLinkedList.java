@@ -1,6 +1,6 @@
 package list.linkedlist;
 
-import com.wyz.list.AbstractList;
+import list.AbstractList;
 
 /**
  * @author wangyz
