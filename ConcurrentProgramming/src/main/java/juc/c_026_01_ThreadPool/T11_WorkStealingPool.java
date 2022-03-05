@@ -1,6 +1,3 @@
-/**
- *
- */
 package juc.c_026_01_ThreadPool;
 
 import java.io.IOException;

@@ -23,7 +23,7 @@ public class ThreadPoolTest implements Runnable {
 
     public static void main(String[] args) {
         LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<>(5);
-        RejectedExecutionHandler handler = new ThreadPoolExecutor.CallerRunsPolicy();
+        RejectedExecutionHandler handler = new ThreadPoolExecutor.DiscardPolicy();
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 10, 0, TimeUnit.SECONDS, queue);
         for (int i = 0; i < 16; i++) {
             //threadPoolExecutor.execute(new ThreadPoolTest());
