@@ -1,6 +1,6 @@
 package list.arraylist;
 
-import com.wyz.list.AbstractList;
+import list.AbstractList;
 
 /**
  * 有动态缩容操作

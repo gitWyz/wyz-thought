@@ -1,7 +1,6 @@
 package sort;
 
-
-import com.wyz.utils.PrintUtil;
+import utils.PrintUtil;
 
 /**
  * 冒泡排序

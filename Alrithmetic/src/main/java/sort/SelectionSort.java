@@ -1,6 +1,6 @@
 package sort;
 
-import com.wyz.utils.PrintUtil;
+import utils.PrintUtil;
 
 /**
  * 选择排序

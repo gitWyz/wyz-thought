@@ -1,6 +1,6 @@
 package list.arraylist;
 
-import com.wyz.list.AbstractList;
+import list.AbstractList;
 
 /**
  * 自定义数组

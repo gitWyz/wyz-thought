@@ -1,6 +1,6 @@
 package sort;
 
-import com.wyz.utils.PrintUtil;
+import utils.PrintUtil;
 
 /**
  * 插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。
