@@ -25,7 +25,6 @@ public class TimeUtil {
      *
      * @param methodName 方法名称
      * @param task 执行任务
-     * @return void 无
      * @author wangyz
      * @date 2021-04-10 12:08:28
      */
