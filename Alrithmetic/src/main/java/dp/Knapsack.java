@@ -1,5 +1,9 @@
 package dp;
 
+/**
+ * 背包问题
+ * @author yzw
+ */
 public class Knapsack {
 	public static void main(String[] args) {
 		int[] values = {6, 3, 5, 4, 6};
