@@ -6,22 +6,22 @@ import java.util.Stack;
 
 public class Tree<T extends Comparable<? super T>> {
 
-    private static class BinaryNode<T> {
+    private static class TreeNode<T> {
         T element;
-        BinaryNode<T> left;
-        BinaryNode<T> right;
-        BinaryNode(T element)
+        TreeNode<T> left;
+        TreeNode<T> right;
+        TreeNode(T element)
         {
             this(element, null, null);
         }
-        BinaryNode(T element, BinaryNode<T> left, BinaryNode<T> right) {
+        TreeNode(T element, TreeNode<T> left, TreeNode<T> right) {
             this.element = element;
             this.left = left;
             this.right = right;
         }
     }
 
-    private BinaryNode<T> root;
+    private TreeNode<T> root;
 
     public void insert(T x) {
         root = insert(x, root);
@@ -32,9 +32,9 @@ public class Tree<T extends Comparable<? super T>> {
         return root == null;
     }
 
-    private BinaryNode<T> insert(T x, BinaryNode<T> t) {
+    private TreeNode<T> insert(T x, TreeNode<T> t) {
         if(t == null) {
-            return new BinaryNode<>(x, null, null);
+            return new TreeNode<>(x, null, null);
         }
 
         int compareResult = x.compareTo(t.element);
@@ -53,7 +53,7 @@ public class Tree<T extends Comparable<? super T>> {
      * 前序遍历
      * 递归
      */
-    public void preOrder(BinaryNode<T> node)
+    public void preOrder(TreeNode<T> node)
     {
         if (node != null)
         {
@@ -67,7 +67,7 @@ public class Tree<T extends Comparable<? super T>> {
      * 中序遍历
      * 递归
      */
-    public void midOrder(BinaryNode<T> node)
+    public void midOrder(TreeNode<T> node)
     {
         if (node != null)
         {
@@ -81,7 +81,7 @@ public class Tree<T extends Comparable<? super T>> {
      * 后序遍历
      * 递归
      */
-    public void posOrder(BinaryNode<T> node)
+    public void posOrder(TreeNode<T> node)
     {
         if (node != null)
         {
@@ -95,7 +95,7 @@ public class Tree<T extends Comparable<? super T>> {
      * 层序遍历
      * 递归
      */
-    public void levelOrder(BinaryNode<T> node) {
+    public void levelOrder(TreeNode<T> node) {
         if (node == null) {
             return;
         }
@@ -107,7 +107,7 @@ public class Tree<T extends Comparable<? super T>> {
         }
     }
 
-    private void levelOrder(BinaryNode<T> node, int level) {
+    private void levelOrder(TreeNode<T> node, int level) {
         if (node == null || level < 1) {
             return;
         }
@@ -124,7 +124,7 @@ public class Tree<T extends Comparable<? super T>> {
         levelOrder(node.right, level - 1);
     }
 
-    public int depth(BinaryNode<T> node) {
+    public int depth(TreeNode<T> node) {
         if (node == null) {
             return 0;
         }
@@ -142,9 +142,9 @@ public class Tree<T extends Comparable<? super T>> {
      * 前序遍历
      * 非递归
      */
-    public void preOrder1(BinaryNode<T> node)
+    public void preOrder1(TreeNode<T> node)
     {
-        Stack<BinaryNode> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         while(node != null || !stack.empty())
         {
             while(node != null) {
@@ -163,8 +163,8 @@ public class Tree<T extends Comparable<? super T>> {
      * 中序遍历
      * 非递归
      */
-    public void midOrder1(BinaryNode<T> node) {
-        Stack<BinaryNode> stack = new Stack<>();
+    public void midOrder1(TreeNode<T> node) {
+        Stack<TreeNode> stack = new Stack<>();
         while(node != null || !stack.empty()) {
             while (node != null) {
                 stack.push(node);
@@ -182,8 +182,8 @@ public class Tree<T extends Comparable<? super T>> {
      * 后序遍历
      * 非递归
      */
-    public void posOrder1(BinaryNode<T> Node) {
-        Stack<BinaryNode> stack1 = new Stack<>();
+    public void posOrder1(TreeNode<T> Node) {
+        Stack<TreeNode> stack1 = new Stack<>();
         Stack<Integer> stack2 = new Stack<>();
         int i = 1;
         while(Node != null || !stack1.empty()) {
@@ -211,13 +211,13 @@ public class Tree<T extends Comparable<? super T>> {
      * 层序遍历
      * 非递归
      */
-    public void levelOrder1(BinaryNode<T> Node) {
+    public void levelOrder1(TreeNode<T> Node) {
         if (Node == null) {
             return;
         }
 
-        BinaryNode<T> binaryNode;
-        Queue<BinaryNode> queue = new LinkedList<>();
+        TreeNode<T> binaryNode;
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(Node);
 
         while (!queue.isEmpty()) {
