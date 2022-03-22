@@ -6,21 +6,6 @@ import java.util.Stack;
 
 public class Tree<T extends Comparable<? super T>> {
 
-    private static class TreeNode<T> {
-        T element;
-        TreeNode<T> left;
-        TreeNode<T> right;
-        TreeNode(T element)
-        {
-            this(element, null, null);
-        }
-        TreeNode(T element, TreeNode<T> left, TreeNode<T> right) {
-            this.element = element;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     private TreeNode<T> root;
 
     public void insert(T x) {
